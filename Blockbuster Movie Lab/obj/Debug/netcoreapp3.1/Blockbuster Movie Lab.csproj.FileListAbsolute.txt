@@ -1,0 +1,13 @@
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\bin\Debug\netcoreapp3.1\Blockbuster Movie Lab.exe
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\bin\Debug\netcoreapp3.1\Blockbuster Movie Lab.deps.json
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\bin\Debug\netcoreapp3.1\Blockbuster Movie Lab.runtimeconfig.json
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\bin\Debug\netcoreapp3.1\Blockbuster Movie Lab.runtimeconfig.dev.json
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\bin\Debug\netcoreapp3.1\Blockbuster Movie Lab.dll
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\bin\Debug\netcoreapp3.1\Blockbuster Movie Lab.pdb
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\obj\Debug\netcoreapp3.1\Blockbuster Movie Lab.csprojAssemblyReference.cache
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\obj\Debug\netcoreapp3.1\Blockbuster Movie Lab.AssemblyInfoInputs.cache
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\obj\Debug\netcoreapp3.1\Blockbuster Movie Lab.AssemblyInfo.cs
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\obj\Debug\netcoreapp3.1\Blockbuster Movie Lab.csproj.CoreCompileInputs.cache
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\obj\Debug\netcoreapp3.1\Blockbuster Movie Lab.dll
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\obj\Debug\netcoreapp3.1\Blockbuster Movie Lab.pdb
+D:\Grand Circus\Grand Circus Docs\Projects\Blockbuster Movie Lab\Blockbuster Movie Lab\obj\Debug\netcoreapp3.1\Blockbuster Movie Lab.genruntimeconfig.cache
