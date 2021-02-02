@@ -7,42 +7,49 @@ namespace Blockbuster_Movie_Lab
     class VHS : Movie
     {
         public int CurrentTime { get; set; }
-        public VHS(string Title, int RunTime, Genre Category, List<string> Scenes) : base(Title, RunTime, Category, Scenes)
+        public VHS(string Title, int RunTime, Genre Category, List<string> Scenes)
+            : base(Title, RunTime, Category, Scenes)
         {
-            Rewind();
+            CurrentTime = 0;
         }
 
         public override void Play()
         {
-
-            for (int i = CurrentTime; i < Scenes.Count; i++)
+            while (true)
             {
-                Console.WriteLine($" Scene [{i}]: {Scenes[i]}");
+                Console.WriteLine($"\nScene [{CurrentTime}]: {Scenes[CurrentTime]}\n");
                 CurrentTime++;
+
+                Console.Write("\nWould you like to watch more? Y/N  " );
+                string userInput = Console.ReadLine().ToLower();
+
+                if (userInput == "no" || userInput == "n")
+                {
+                    break;
+                }
             }
 
             if(CurrentTime > 0)
             {
-                Console.WriteLine("Would you like to rewind? Yes or No?");
-                string userInput = Console.ReadLine();
-                
-                if(userInput == "Yes")
-                {
-                    Rewind();
-                }
-                else
-                {
-                    Console.WriteLine("You're that guy, well...alright.");
-                    Rewind();
-                }
-
+                Rewind();
             }
                  
         }
 
         public void Rewind()
         {
-            CurrentTime = 0;
+            Console.Write("\nWould you like to rewind? Yes or No?  ");
+            string userInput = Console.ReadLine().ToLower();
+
+            if (userInput == "y" || userInput == "yes")
+            {
+                CurrentTime = 0;
+            }
+            else
+            {
+                Console.WriteLine("You're that guy, well...alright.");
+
+            }
         }
 
         public void PlayWholeMovie()

@@ -6,36 +6,39 @@ namespace Blockbuster_Movie_Lab
 {
     class DVD : Movie
     {
-        public DVD(string Title, int RunTime, Genre Category, List<string> Scenes) : base(Title, RunTime, Category, Scenes)
+        public DVD(string Title, int RunTime, Genre Category, List<string> Scenes)
+            : base(Title, RunTime, Category, Scenes)
         {
             
         }
 
         public override void Play()
         {
-            Console.WriteLine("Which scene would you like to watch?");
-            PrintScenes();
-
-            string userInput = Console.ReadLine();
-            int option;
-
-            for (int i = 0; i < Scenes.Count; i++)
+            while (true)
             {
-                while (true)
+                PrintScenes();
+                Console.Write($"\nWhich scene in {Title} would you like to watch? Select 0 to {Scenes.Count - 1}:  ");
+                string userInput = Console.ReadLine();
+                int option = ValidCheck(userInput, 0, Scenes.Count);
+
+                for (int i = 0; i < Scenes.Count; i++)
                 {
-                    if (Int32.TryParse(userInput, out option))
+
+                    if (i == option)
                     {
-                        if(i == option)
-                        {
-                            Console.WriteLine($" Scene [{i}]: {Scenes[i]}");
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Please input one of the scene numbers.");
+                        Console.WriteLine($"\n\tScene [{i}]: {Scenes[i]}");
+                        break;
                     }
                 }
+
+                Console.Write("\nWould you like to watch another scene? Y/N  ");
+                string again = Console.ReadLine().ToLower();
+
+                if (again == "n" || again == "no")
+                {
+                    break;
+                }
+
             }
         }
 

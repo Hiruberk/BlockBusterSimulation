@@ -13,13 +13,13 @@ namespace Blockbuster_Movie_Lab
         Action
     }
 
-    class Movie
+    abstract class Movie
     {
         public string Title { get; set; }
         public int RunTime { get; set; }//in minutes
         public Genre Category { get; set; }
 
-        public List<string> Scenes = new List<string>();
+        public List<string> Scenes { get; set; }
 
        
         public Movie(string Title, int RunTime, Genre Category, List<string> Scenes)
@@ -33,25 +33,22 @@ namespace Blockbuster_Movie_Lab
 
         public virtual void PrintInfo()
         {
-            Console.WriteLine($"Title: {Title}");
+            Console.WriteLine($"\nTitle: {Title}");
             Console.WriteLine($"Run Time: {RunTime} minutes");
             Console.WriteLine($"Genre: {Category}\n");
         }
 
         public void PrintScenes()
         {
-            for (int i = 0; i < Scenes.Count - 1; i++)
+            Console.WriteLine($"\nList of Scenes: {Title}");
+
+            for (int i = 0; i < Scenes.Count; i++)
             {
-                Console.WriteLine($"List of Scenes: {Title}");
-                Console.WriteLine($"Scene {i}: {Scenes[i]}");
+                Console.WriteLine($"\tScene {i}");
             }
         }
-        
-        public virtual void Play()
-        {
-            //Needs to be abstract when we learn that. Sublcasses will utilize this.
-        }
 
+        public abstract void Play();
 
         //public override string ToString()
         //{
@@ -62,6 +59,31 @@ namespace Blockbuster_Movie_Lab
         //    return output;
         //}
 
+        public virtual int ValidCheck(string input, int min, int max)
+        {
+            int integer;
+            while (true)
+            {
+                if (Int32.TryParse(input, out integer))//Checks if it can be converted to a number
+                {
+                    if (integer >= min && integer <= max)//Checks that it is within the given range
+                    {
+                        return integer;// returns a valid integer
+                    }
+                    else
+                    {
+                        Console.Write("\nPlease enter a number that is on the list!  ");//requires them to keep trying until they give a valid entry
+                        input = Console.ReadLine();
+                    }
+
+                }
+                else
+                {
+                    Console.Write("\nPlease enter a number.  ");//requires them to keep trying until they give a valid entry
+                    input = Console.ReadLine();
+                }
+            }
+        }
 
     }
 }
