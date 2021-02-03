@@ -19,16 +19,12 @@ namespace Blockbuster_Movie_Lab
             while (true)
             {
                 Movie m = b.GetMovie(index);
+                string input = "" ;
 
-                if (userInput == "y" || userInput == "yes")
+                if (userInput == "y" || userInput == "yes" || input == "y" || input == "yes")
                 {
                     m.Play();
                     
-                }
-                else if (userInput == "n" || userInput == "no")
-                {
-                    Console.WriteLine("\nGoodbye, thanks for stopping in");
-                    break;
                 }
                 else
                 {
@@ -36,7 +32,13 @@ namespace Blockbuster_Movie_Lab
                 }
 
                 Console.Write("\nWould you like to watch another movie? Y/N  ");
-                string Input = Console.ReadLine().Trim().ToLower();
+                input = Console.ReadLine().Trim().ToLower();
+
+                if(input == "n" || input == "no" || userInput == "n" || userInput == "no")
+                {
+                    Console.WriteLine("\nGoodbye, thanks for stopping in");
+                    break;
+                }
 
                 index = b.CheckOut();
             }

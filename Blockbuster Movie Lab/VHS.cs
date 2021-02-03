@@ -17,7 +17,7 @@ namespace Blockbuster_Movie_Lab
         {
             while (true)
             {
-                Console.WriteLine($"\nScene [{CurrentTime}]: {Scenes[CurrentTime]}\n");
+                Console.WriteLine($"\nScene [{CurrentTime}]: {Scenes[CurrentTime]}\n"); //when going past the full count breaks
                 CurrentTime++;
 
                 Console.Write("\nWould you like to watch more? Y/N  " );
@@ -25,14 +25,22 @@ namespace Blockbuster_Movie_Lab
 
                 if (userInput == "no" || userInput == "n")
                 {
+                    if (CurrentTime > 0)
+                    {
+                        Rewind();
+                    }
+                    break;
+                }
+
+                if (CurrentTime == Scenes.Count)
+                {
+                    Console.WriteLine($"That is the end of {Title}");
+                    Rewind();
                     break;
                 }
             }
 
-            if(CurrentTime > 0)
-            {
-                Rewind();
-            }
+
                  
         }
 
@@ -48,6 +56,7 @@ namespace Blockbuster_Movie_Lab
             else
             {
                 Console.WriteLine("You're that guy, well...alright.");
+                CurrentTime = 0;
 
             }
         }
