@@ -17,16 +17,16 @@ namespace Blockbuster_Movie_Lab
             while (true)
             {
                 PrintScenes();
-                Console.Write($"\nWhich scene in {Title} would you like to watch? Select 0 to {Scenes.Count - 1}:  ");
+                Console.Write($"\nWhich scene in {Title} would you like to watch? Select 1 to {Scenes.Count}:  ");
                 string userInput = Console.ReadLine();
-                int option = ValidCheck(userInput, 0, Scenes.Count);
+                int option = ValidCheck(userInput, 1, Scenes.Count);
 
                 for (int i = 0; i < Scenes.Count; i++)
                 {
 
-                    if (i == option)
+                    if (i == option-1)
                     {
-                        Console.WriteLine($"\n\tScene [{i}]: {Scenes[i]}");
+                        Console.WriteLine($"\n\tScene [{option}]: {Scenes[i]}");
                         break;
                     }
                 }
@@ -45,9 +45,13 @@ namespace Blockbuster_Movie_Lab
 
 
 
-        public void PlayWholeMovie()
+        public override void PlayWholeMovie()
         {
-
+            Console.WriteLine("\nPlease turn off your cell phone and enjoy the movie.");
+            for (int i = 0; i < Scenes.Count; i++)
+            {
+                    Console.WriteLine($"\n\tScene [{i+1}]: {Scenes[i]}");
+            }
         }
     }
 }

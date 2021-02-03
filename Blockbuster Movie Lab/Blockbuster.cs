@@ -32,18 +32,18 @@ namespace Blockbuster_Movie_Lab
                     "Drew Barrymore paints many pictures of Adam Sandler, but doesn't know why.", "Suddenly, Broken brain Drew Barrymore has a toddler with Adam Sandler on a boat!" };
             List<string> airplaneScenes = new List<string>() { "Taxi driver throws water at his face.", "He boards plane after stalking ex-girlfriend.", "Everyone gets reeeaaalll sick.", 
                     "Taxi driver takes over the plane.", "Taxi driver calls a friend to ask how to land the plane, but just has flashbacks.", "Taxi driver mostly lands the plan, but gets his girlfriend back."};
-            List<string> jawsScenes = new List<string>() { "Scene: Opens up to a large body of water.", "Scene: The princess's boyfriend is a pirate!",
-                    "Princess gets kidnapped by, for lack of a better term, the three stooges.", "Pirate boyfriend shows up and takes off into the forest full of large rodents.", "Pirate boyfriend is mostly dead, but partially alive!",
+            List<string> jawsScenes = new List<string>() { "Opens up on to a large body of water. It is the ocean.", "The princess's boyfriend is a pirate!", "Princess gets kidnapped by, for lack of a better term, the three stooges.",
+                    "Pirate boyfriend shows up and takes off into the forest full of large rodents.", "Pirate boyfriend is mostly dead, but partially alive!",
                     "Wedding and Princess has suicidal attempt.", "Pirate and Princess passionately kiss.", "The little boy asks his grandfather to reread the story."};
 
-            Movie shrek = new VHS("Shrek", 95, Genre.Comedy, shrekScenes);
-            Movie knivesOut = new DVD("Knives Out", 130, Genre.Drama, knivesScenes);
-            Movie avengers = new DVD("Avengers", 144, Genre.Action, avengerScenes);
-            Movie conjuring = new VHS("The Conjuring", 112, Genre.Horror, conjuringScenes);
-            Movie hereditary = new DVD("Hereditary", 127, Genre.Horror, hereditaryScenes);
-            Movie fiftyDates = new VHS("50 First Dates", 96, Genre.Romance, fiftyDatesScenes);
-            Movie airplane = new VHS("Airplane!", 87, Genre.Comedy, airplaneScenes);
-            Movie jaws = new DVD("Jaws", 124, Genre.Drama, jawsScenes);
+            Movie shrek = new VHS("VHS Shrek", 95, Genre.Comedy, shrekScenes);
+            Movie knivesOut = new DVD("DVD Knives Out", 130, Genre.Drama, knivesScenes);
+            Movie avengers = new DVD("DVD Avengers", 144, Genre.Action, avengerScenes);
+            Movie conjuring = new VHS("VHS The Conjuring", 112, Genre.Horror, conjuringScenes);
+            Movie hereditary = new DVD("DVD Hereditary", 127, Genre.Horror, hereditaryScenes);
+            Movie fiftyDates = new VHS("VHS 50 First Dates", 96, Genre.Romance, fiftyDatesScenes);
+            Movie airplane = new VHS("VHS Airplane!", 87, Genre.Comedy, airplaneScenes);
+            Movie jaws = new DVD("DVD Jaws", 124, Genre.Drama, jawsScenes);
 
             Movies.Add(shrek);
             Movies.Add(knivesOut);
@@ -74,7 +74,7 @@ namespace Blockbuster_Movie_Lab
 
             for (int i = 0; i < Movies.Count; i++)
             {
-                int option = ValidCheck(userInput, 0 , Movies.Count);
+                int option = ValidCheck(userInput, 1 , Movies.Count+1);
 
                 if (i == option-1)
                 {
@@ -97,6 +97,7 @@ namespace Blockbuster_Movie_Lab
             int integer;
             while (true)
             {
+
                 if (Int32.TryParse(input, out integer))//Checks if it can be converted to a number
                 {
                     if (integer >= min && integer <= max)//Checks that it is within the given range

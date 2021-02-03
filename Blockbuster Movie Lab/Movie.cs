@@ -44,11 +44,13 @@ namespace Blockbuster_Movie_Lab
 
             for (int i = 0; i < Scenes.Count; i++)
             {
-                Console.WriteLine($"\tScene {i}");
+                Console.WriteLine($"\tScene {i+1}");
             }
         }
 
         public abstract void Play();
+
+        public abstract void PlayWholeMovie();
 
         //public override string ToString()
         //{

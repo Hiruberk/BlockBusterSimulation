@@ -17,8 +17,21 @@ namespace Blockbuster_Movie_Lab
         {
             while (true)
             {
-                Console.WriteLine($"\nScene [{CurrentTime}]: {Scenes[CurrentTime]}\n"); //when going past the full count breaks
+                if(CurrentTime == Scenes.Count)
+                {
+                    Console.WriteLine("\nSorry, someone didn't rewind. Let me get that for you.");
+                    CurrentTime = 0;
+                }
+
+                Console.WriteLine($"\nScene [{CurrentTime+1}]: {Scenes[CurrentTime]}\n"); 
                 CurrentTime++;
+
+                if (CurrentTime == Scenes.Count)
+                {
+                    Console.WriteLine($"\nI am sorry, but that is the end of {Title}");
+                    Rewind();
+                    break;
+                }
 
                 Console.Write("\nWould you like to watch more? Y/N  " );
                 string userInput = Console.ReadLine().ToLower();
@@ -31,17 +44,7 @@ namespace Blockbuster_Movie_Lab
                     }
                     break;
                 }
-
-                if (CurrentTime == Scenes.Count)
-                {
-                    Console.WriteLine($"That is the end of {Title}");
-                    Rewind();
-                    break;
-                }
             }
-
-
-                 
         }
 
         public void Rewind()
@@ -55,15 +58,18 @@ namespace Blockbuster_Movie_Lab
             }
             else
             {
-                Console.WriteLine("You're that guy, well...alright.");
-                CurrentTime = 0;
+                Console.WriteLine("\nYou're that guy, well...alright.");
 
             }
         }
 
-        public void PlayWholeMovie()
+        public override void PlayWholeMovie()
         {
-
+            Console.WriteLine("\nPlease turn off your pager and enjoy the movie.");
+            for (int i = 0; i < Scenes.Count; i++)
+            {
+                Console.WriteLine($"\n\tScene [{i+1}]: {Scenes[i]}");
+            }
         }
 
     }
