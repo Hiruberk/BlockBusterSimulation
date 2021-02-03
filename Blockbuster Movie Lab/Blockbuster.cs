@@ -10,7 +10,7 @@ namespace Blockbuster_Movie_Lab
 
         public Blockbuster()
         {
-            Movies = new List<Movie>();
+            Movies = new List<Movie>();//My apologies for this wall of text when defining the scenes. File IO would've been useful to declutter this.
             List<string> shrekScenes = new List<string>() 
                 {"Shrek Hanging out in the Swamp.", "Shrek meets Donkey.", "Shrek walks up into a castle.", "Shreak befriends a dragon.", "Shrek gets lucky.", "Back to swamp and all is happy." };
             List<string> knivesScenes = new List<string>() 
@@ -58,27 +58,27 @@ namespace Blockbuster_Movie_Lab
         public void PrintMovies()
         {
             
-            for (int i = 0; i < Movies.Count; i++)
+            for (int i = 0; i < Movies.Count; i++)//Iterates through the Movies list that is defined above
             {
-                Console.WriteLine($"\t[{i+1}.] {Movies[i].Title}");
+                Console.WriteLine($"\t[{i+1}.] {Movies[i].Title}");//Prints ever index in Movies
             }
         }
 
-        public int CheckOut()
+        public int CheckOut()//Start of the program
         {
-            PrintMovies();
+            PrintMovies();//Prints all the movies to select from
             Console.Write("\nPlease select a movie you want to watch:  ");
 
             
             string userInput = Console.ReadLine();
 
-            for (int i = 0; i < Movies.Count; i++)
+            for (int i = 0; i < Movies.Count; i++)//Iterates through the movies.
             {
-                int option = ValidCheck(userInput, 1 , Movies.Count+1);
+                int option = ValidCheck(userInput, 1 , Movies.Count+1);//Checks that a number on the list was entered properly
 
-                if (i == option-1)
+                if (i == option-1)//Since all the options are +1 to index it brings it back to match the right index of the list
                 {
-                    Movies[i].PrintInfo();
+                    Movies[i].PrintInfo();//returns the index and prints the movie description
                     return i;
                     
                 }
@@ -87,7 +87,7 @@ namespace Blockbuster_Movie_Lab
             return index;
         }
 
-        public Movie GetMovie(int index)
+        public Movie GetMovie(int index)//Grabs the user selected movie
         {
             return Movies[index];
         }

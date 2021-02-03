@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Blockbuster_Movie_Lab
 {
-    public enum Genre
+    public enum Genre//Constant Genres defined as the property Category below per lab reqs
     {
         Drama,
         Comedy,
@@ -19,7 +19,7 @@ namespace Blockbuster_Movie_Lab
         public int RunTime { get; set; }//in minutes
         public Genre Category { get; set; }
 
-        public List<string> Scenes { get; set; }
+        public List<string> Scenes { get; set; }//Intialized in the blockbuster class
 
        
         public Movie(string Title, int RunTime, Genre Category, List<string> Scenes)
@@ -40,28 +40,19 @@ namespace Blockbuster_Movie_Lab
 
         public void PrintScenes()
         {
-            Console.WriteLine($"\nList of Scenes: {Title}");
+            Console.WriteLine($"\nList of Scenes: {Title}");//Header
 
             for (int i = 0; i < Scenes.Count; i++)
             {
-                Console.WriteLine($"\tScene {i+1}");
+                Console.WriteLine($"\tScene {i+1}");//Lists all the scenes in the list for the specific movie
             }
         }
 
-        public abstract void Play();
+        public abstract void Play();//Overwritten in the child classes VHS & DVD
 
-        public abstract void PlayWholeMovie();
+        public abstract void PlayWholeMovie();//Overwritten in the child classes VHS & DVD
 
-        //public override string ToString()
-        //{
-        //    string output = "";
-        //    output += $"Title: {Title}\n";
-        //    output += $"Run Time: {RunTime}\n";
-        //    output += $"Genre: {Category}\n";
-        //    return output;
-        //}
-
-        public virtual int ValidCheck(string input, int min, int max)
+        public virtual int ValidCheck(string input, int min, int max)// Needed this again for the children classes and couldn't pull from blockbuster
         {
             int integer;
             while (true)
